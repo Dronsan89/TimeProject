@@ -8,7 +8,7 @@ public class Alarm : MonoBehaviour
     [SerializeField] private InputField inputFieldHour, inputFieldMinute, inputFieldSecond;
 
     private int hour, minute, second;
-    private int stepMinute = -6;
+    private int stepHour = -30;
     private float timer;
     private float angleArrowAlarm = 0;
 
@@ -49,7 +49,7 @@ public class Alarm : MonoBehaviour
 
         if (currentArrowAlarm != null && Input.GetMouseButton(0) && timer <= 0)
         {
-            angleArrowAlarm += stepMinute;
+            angleArrowAlarm += stepHour;
             hour++;
 
             currentArrowAlarm.transform.rotation = Quaternion.Euler(0f, 0f, angleArrowAlarm);
